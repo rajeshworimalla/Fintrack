@@ -250,7 +250,7 @@ table {
   #add-expense select:focus,
   #add-expense textarea:focus {
     outline: none;
-    border-color: #009879;
+    border-color: #ff2c2c;
     box-shadow: 0 0 5px rgba(0, 152, 121, 0.4);
   }
   
@@ -267,11 +267,11 @@ table {
   }
   
   #add-expense button:hover {
-    background-color: #007f65;
+    background-color: #ff2c2c;
   }
   
   #add-expense button:active {
-    background-color: #005f4c;
+    background-color: #ff2c2c;
     transform: translateY(1px);
   }
   
@@ -484,5 +484,9 @@ table {
     color: #333; /* Adjust text color */
 }
 
+.profile-email a{
+  text-decoration: none;
+  color: white;
+}
   
   

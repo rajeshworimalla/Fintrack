@@ -64,7 +64,7 @@ def logout():
 @app.route('/expenses', methods= ['GET','POST'])
 def expenses():
     if 'username' in session:
-        chart_data,legend_data = pie_chart()
+        
         if request.method == "POST":
             date = request.form['date']
             category = request.form['category']
@@ -72,6 +72,7 @@ def expenses():
             description = request.form['description']
             add_expense(date, category, amount, description, session['user_id'])
         expenses = get_expenses(session['user_id'])
+        chart_data,legend_data = pie_chart()
         return render_template('expenses.html', username=session['username'], email = session['email'], expenses = expenses, chart_data = chart_data ,css_file= "css/expense.css",legend_data= legend_data)
     else: 
         return redirect(url_for('login'))
@@ -103,7 +104,7 @@ def delete_incomes():
 @app.route('/wallets', methods = ['GET', 'POST'])
 def wallets():
     if 'username' in session:
-        chart_data,legend_data = pie_chart()
+        
         if request.method == "POST":
             date = request.form['date']
             source = request.form['source']
@@ -112,6 +113,7 @@ def wallets():
             add_income(date, source, amount, description, session['user_id'])
         
         incomes = get_incomes(session['user_id'])
+        chart_data,legend_data = pie_chart()
         return render_template('wallets.html',incomes = incomes, username=session['username'], email = session['email'], expenses = expenses, chart_data = chart_data, css_file = "css/wallet.css", legend_data=legend_data)
     else: 
         return redirect(url_for('login'))
@@ -140,13 +142,10 @@ def summary():
         ax2.plot(dates, expenses_amount, marker='o', linestyle='-', color='b', label='Expenses')
 
         # Set title and labels
-        ax2.set_title('Trend of Expenses Over Time')
-        ax2.set_xlabel('Date')
-        ax2.set_ylabel('Amount')
-
+       
         # Clean up x-axis
         ax2.xaxis.set_major_formatter(DateFormatter('%b %d'))  # Format as "Month Day" (e.g., "Nov 20")
-        plt.xticks(rotation=45)  # Rotate x-axis labels
+        # plt.xticks(rotation=45)  # Rotate x-axis labels
         plt.tight_layout()       # Prevent labels from getting cut off
 
         # Add grid and legend
@@ -193,9 +192,9 @@ def summary():
                 width=bar_width, label='Incomes', color='green')
 
         # Set title and labels
-        ax3.set_title('Comparison of Expenses and Incomes - Last Month')
-        ax3.set_xlabel('Date')
-        ax3.set_ylabel('Amount')
+        # ax3.set_title('Comparison of Expenses and Incomes - Last Month')
+        # ax3.set_xlabel('Date')
+        # ax3.set_ylabel('Amount')
 
         # Clean up x-axis
                 # Clean up x-axis
@@ -206,7 +205,7 @@ def summary():
         for label in ax3.get_xticklabels():
             label.set_fontstyle('normal')
 
-        plt.xticks(rotation=45)  # Rotate labels for readability
+        # plt.xticks(rotation=45)  # Rotate labels for readability
         plt.tight_layout()       # Prevent labels from being cut off
 
         # Add legend

@@ -7,30 +7,29 @@
     color: #2c3e50;
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 100vh;
     box-sizing: border-box;
     padding: 20px;
 }
 
 /* Header Styles */
-.summary-page h1 {
-    font-size: 2.5rem;
-    margin: 20px 0;
+.summary-page .page-head {
+    font-size: 3rem;
+    padding-left: 12px;
     color: #34495e;
-    text-transform: uppercase;
-    text-align: center;
-    border-bottom: 2px solid #4caf50;
-    padding-bottom: 10px;
-    display: inline-block;
+    
 }
 
 /* Highlights (e.g., totals) */
 .summary-page h2 {
-    font-size: 1.8rem;
-    margin: 10px 0;
-    color: #e74c3c;
-    text-align: center;
+    
+    margin: 0px 
+    /* text-align: center; */
+}
+.container{
+    background-color: white;
+    padding: 10px 25px ;
+    border-radius:  10px;
 }
 
 .summary-page h2.total-income {
@@ -38,10 +37,10 @@
 }
 
 .summary-page h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 20px 0;
     color: #34495e;
-    text-align: center;
+    margin-top:60px ;
 }
 
 /* Content Box */
@@ -55,16 +54,19 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
+.values{
+    font-size: 18px;
+}
 .summary-page .content-box h3 {
     margin-bottom: 20px;
 }
-
+.values{
+    font-size: ;
+}
 /* Images (Graphs) Styling */
 .summary-page img {
     display: block;
-    margin: 20px auto;
-    max-width: 90%;
+    max-width: 95%;
     height: auto;
     border: 1px solid #ddd;
     border-radius: 8px;

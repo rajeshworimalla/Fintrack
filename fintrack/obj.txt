@@ -1,0 +1,8 @@
+# Personal Finance Tracker
+
+*login/signup and handle session (done)
+
+1. Input financial transaction (categorize as income or expense) (done)
+2. Store in database (done)
+3. Display total income,total expense and current balance
+4. Visualize results in graphs and chart

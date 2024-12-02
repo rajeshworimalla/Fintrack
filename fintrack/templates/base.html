@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %} </title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Images/logopng.png') }}" >
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename= css_file) }}">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="profile">
+        <img src="{{url_for('static', filename= 'Images/user.png')}}" alt="Profile" class="profile-img">
+        <div class="profile-info">
+          <p class="profile-name">{{username}}</p>
+          <p class="profile-email">{{email}}</p>
+          <p class="profile-email"><a href = "{{url_for('logout')}}">Log out</a></p>
+        </div>
+      </div>
+      <ul class="menu">
+        <li><a href="{{ url_for('home') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('expenses') }}">Expenses</a></li>
+        <li><a href="{{ url_for('wallets') }}">Wallets</a></li>
+        <li><a href="{{ url_for('summary') }}">Summary</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
+        {% block content %}
+
+    
+        {% endblock %}
+    </div>
+    <div class="right-panel">
+      <h3>Where your money goes?</h3>
+      <img src="data:image/png;base64,{{ chart_data }}" class = "piechart" alt="Expense vs Income Pie Chart">
+      <ul class="categories">
+        {% for item in legend_data %}
+        <li class="legend-item">
+          <span class="legend-color" style="background-color: {{ item.color }};"></span>
+          <span class="legend-label">{{ item.label }}</span>
+      </li>
+        {% endfor %}
+      </ul>
+      
+    </div>
+  </div>
+</body>
+</html>

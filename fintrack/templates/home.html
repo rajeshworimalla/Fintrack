@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+  <!-- Main Content -->
+    <header>
+      <h1>Expenses</h1>
+    </header>
+    <div class="expenses">
+      <h2>Your Recent Expenses</h2>
+      <ul>
+        {% for expense in expenses%}
+        <li>
+          <span class="icon grocery"></span>
+          <span>{{expense.2}}</span>
+          <span class="expense-amount">-{{expense.3}}</span>
+        </li>
+        {% endfor %}
+
+      </ul>
+      
+      
+    </div>
+
+
+
+{% endblock %}

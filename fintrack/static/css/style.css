@@ -1,0 +1,488 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    height: 100vh; /* Full viewport height */
+    overflow:hidden;
+  }
+  
+  /* Dashboard Layout */
+  .dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    width: 100%;
+    background: #f4f4f8;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 100%; /* Adjust as needed */
+    background: #1a1a2e;
+    color: #fff;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .profile-info {
+    margin-left: 15px;
+  }
+  
+  .profile-name {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .profile-email {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ccc;
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+  }
+  .menu li {
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  .menu li a{
+    text-decoration: None;
+    color: white;   
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  
+  .menu li a:hover{
+    font-weight: bold;
+    color: #4caf50;
+  }
+  
+  /* Main Content */
+  .main-content {
+    width: 97%; /* Adjust as needed */
+    overflow-y: auto; /* Enable vertical scrolling for the main content */
+    padding: 20px;
+    background: #fff;
+
+  }
+  
+  header {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .expenses h2 {
+    margin: 15px 0;
+  }
+  
+  .expenses ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .expenses li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .expenses .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .expenses .expense-amount {
+    font-weight: bold;
+  }
+  
+  /* Right Panel */
+  .right-panel {
+    width: 90%; /* Adjust as needed */
+    padding: 20px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    overflow: hidden; 
+  }
+  .sidebar, .main-content, .right-panel {
+    height: 100vh;
+  }
+  
+  
+  .categories {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .categories li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  
+  .tips {
+    background: #f1f1f1;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .tips button {
+    padding: 10px 20px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  /* General Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  table thead tr {
+    background-color: #ff2c2c;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  table tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  table tbody tr td a {
+    color: #ff2c2c;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  table tbody tr td a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Table */
+  @media (max-width: 768px) {
+    table {
+      font-size: 14px;
+    }
+  
+    table th, table td {
+      padding: 8px 10px;
+    }
+  }
+  /* Add Expense Form Styling */
+#add-expense {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #add-expense h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  #add-expense form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  #add-expense label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  #add-expense input,
+  #add-expense select,
+  #add-expense textarea,
+  #add-expense button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  #add-expense input:focus,
+  #add-expense select:focus,
+  #add-expense textarea:focus {
+    outline: none;
+    border-color: #009879;
+    box-shadow: 0 0 5px rgba(0, 152, 121, 0.4);
+  }
+  
+  #add-expense textarea {
+    resize: none;
+  }
+  
+  #add-expense button {
+    background-color: #ff2c2c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #add-expense button:hover {
+    background-color: #007f65;
+  }
+  
+  #add-expense button:active {
+    background-color: #005f4c;
+    transform: translateY(1px);
+  }
+  
+  /* Responsive Design for Form */
+  @media (max-width: 768px) {
+    #add-expense form {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    #add-expense input,
+    #add-expense select,
+    #add-expense textarea,
+    #add-expense button {
+      max-width: 100%;
+    }
+  }
+
+  /* Wallet Tab Container */
+#wallets-tab {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+  }
+  
+  /* Wallet Tab Header */
+  #wallets-tab h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Add Income Form Styling */
+  #add-income {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #add-income h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  #add-income form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  #add-income label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  #add-income input,
+  #add-income textarea,
+  #add-income button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  #add-income input:focus,
+  #add-income textarea:focus {
+    outline: none;
+    border-color: #009879;
+    box-shadow: 0 0 5px rgba(0, 152, 121, 0.4);
+  }
+  
+  #add-income textarea {
+    resize: none;
+  }
+  
+  #add-income button {
+    background-color: #009879;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #add-income button:hover {
+    background-color: #007f65;
+  }
+  
+  #add-income button:active {
+    background-color: #005f4c;
+    transform: translateY(1px);
+  }
+  
+  /* Wallet Table Styling */
+  #wallet-list {
+    margin-top: 20px;
+  }
+  
+  #wallet-list h3 {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 15px;
+  }
+  
+  #wallet-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  #wallet-list thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  #wallet-list th,
+  #wallet-list td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  #wallet-list tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #wallet-list tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  #wallet-list tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  #wallet-list tbody tr td a {
+    color: #009879;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #wallet-list tbody tr td a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design for Wallet Tab */
+  @media (max-width: 768px) {
+    #add-income form {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    #add-income input,
+    #add-income textarea,
+    #add-income button {
+      max-width: 100%;
+    }
+  
+    #wallets-tab {
+      padding: 15px;
+    }
+  
+    #wallet-list table {
+      font-size: 14px;
+    }
+  }
+  .piechart{
+      padding-left: 25%;
+      width: 150px; /* Set a smaller width */
+      height: auto; /* Maintain aspect ratio */
+  
+  }
+  
+  .legend-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px; /* Adjust spacing between items */
+}
+
+.legend-color {
+    display: inline-block;
+    width: 12px; /* Adjust size of color box */
+    height: 12px; /* Adjust size of color box */
+    margin-right: 10px; /* Spacing between color box and label */
+    border-radius: 2px; /* Add slight rounding for color boxes */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+}
+
+.legend-label {
+    font-size: 14px; /* Adjust font size */
+    color: #333; /* Adjust text color */
+}
+
+  
+  

@@ -1,0 +1,112 @@
+/* General Reset */
+.summary-page {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* Header Styles */
+.summary-page h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #34495e;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid #4caf50;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* Highlights (e.g., totals) */
+.summary-page h2 {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    color: #e74c3c;
+    text-align: center;
+}
+
+.summary-page h2.total-income {
+    color: #2ecc71;
+}
+
+.summary-page h3 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #34495e;
+    text-align: center;
+}
+
+/* Content Box */
+.summary-page .content-box {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.summary-page .content-box h3 {
+    margin-bottom: 20px;
+}
+
+/* Images (Graphs) Styling */
+.summary-page img {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Style (Optional) */
+.summary-page .btn {
+    display: inline-block;
+    background-color: #4caf50;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-page .btn:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .summary-page h1 {
+        font-size: 2rem;
+    }
+
+    .summary-page h2,
+    .summary-page h3 {
+        font-size: 1.2rem;
+    }
+
+    .summary-page .content-box {
+        padding: 15px;
+    }
+
+    .summary-page img {
+        max-width: 100%;
+    }
+}

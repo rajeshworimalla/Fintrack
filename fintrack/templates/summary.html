@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Summary {% endblock %}
+
+{% block content %}
+<div class="summary-page">
+    <h1>Summary</h1>
+    <h2>Total Expense: {{ total_expense }}</h2>
+    <h2>Total Income: {{ total_income }}</h2>
+    <h3>Trend of Expenses Over Time</h3>
+    <img src="data:image/png;base64,{{ line_graph_data }}" alt="Trend of Expenses Line Graph">
+    <div>
+        <h3>Comparison of Expenses and Incomes - Last Month</h3>
+        <img src="data:image/png;base64,{{ comparison_graph_data }}" alt="Comparison Graph">
+    </div>
+</div>
+
+{% endblock %}

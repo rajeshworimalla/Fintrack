@@ -2,11 +2,11 @@ from flask import Flask, render_template, request, session, redirect, url_for
 from config import get_user_info, insert_new_user, user_exists, add_expense ,get_expenses, add_income, get_incomes, delete_user_expense, delete_user_income
 from visualize import pie_chart
 from datetime import datetime,timedelta
-from matplotlib import rcParams
 from matplotlib.dates import DateFormatter
 from io import BytesIO
 import matplotlib.pyplot as plt
 import base64
+import matplotlib.dates as mdates
 
 
 app = Flask(__name__)
@@ -130,11 +130,9 @@ def summary():
         total_income = sum(income[3] for income in incomes)
 
         # Prepare data for line graph (expenses over time)
-        dates = [expense[1] for expense in expenses]  # Extract dates
-        expenses_amount = [expense[3] for expense in expenses]  # Extract expense amounts
+        dates = [datetime.strptime(str(expense[1]).split(' ')[0], '%Y-%m-%d') for expense in expenses]
 
-        # Convert dates to a readable format
-        dates = [str(date) for date in dates]
+        expenses_amount = [expense[3] for expense in expenses]
 
         fig2, ax2 = plt.subplots(figsize=(10, 5))
 
@@ -142,16 +140,21 @@ def summary():
         ax2.plot(dates, expenses_amount, marker='o', linestyle='-', color='b', label='Expenses')
 
         # Set title and labels
-       
-        # Clean up x-axis
-        ax2.xaxis.set_major_formatter(DateFormatter('%b %d'))  # Format as "Month Day" (e.g., "Nov 20")
-        # plt.xticks(rotation=45)  # Rotate x-axis labels
-        plt.tight_layout()       # Prevent labels from getting cut off
+        ax2.set_title('Expenses Over Time')
+        ax2.set_xlabel('Date')
+        ax2.set_ylabel('Amount')
+
+        # Format x-axis
+        ax2.xaxis.set_major_locator(mdates.MonthLocator())  # Major ticks at the start of each month
+        ax2.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))  # Format: Month Day
+        ax2.set_xlim([min(dates), max(dates)])  # Ensure all dates are shown
+
+        # Rotate x-axis labels for better readability
+        # plt.xticks(rotation=45, ha='right')
 
         # Add grid and legend
         ax2.grid(True)
         ax2.legend()
-
         # Save line graph as Base64
         buf2 = BytesIO()
         plt.savefig(buf2, format='png', bbox_inches='tight')

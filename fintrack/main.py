@@ -10,7 +10,7 @@ import matplotlib.dates as mdates
 
 
 app = Flask(__name__)
-app.secret_key = "padeswori" 
+app.secret_key = "ihatesecretkeys" 
 
 
 @app.route('/login', methods=['POST', 'GET'])
